@@ -14,26 +14,26 @@ describe('Problem 2', () => {
     });
   });
 
-  describe('With invalid `upperLimit`:', () => {
-    it('Returns an error message for a missing `upperLimit`', () => {
+  describe('With an invalid input:', () => {
+    it('Returns an error message for a missing input', () => {
       const badInput = () => sumOfFibonacciEvens();
       const errMsg = 'Please enter a positive integer for the `upperLimit`.';
       expect(badInput).to.throw(errMsg).with.property('name', 'InputException');
     });
 
-    it('Returns an error message for a negative `upperLimit`', () => {
+    it('Returns an error message for a negative input', () => {
       const badInput = () => sumOfFibonacciEvens(-90);
       const errMsg = 'Please enter a positive integer for the `upperLimit`.';
       expect(badInput).to.throw(errMsg).with.property('name', 'InputException');
     });
 
-    it('Returns an error message for a non-integer `upperLimit`', () => {
+    it('Returns an error message for a non-integer input', () => {
       const badInput = () => sumOfFibonacciEvens(90.33);
       const errMsg = 'Please enter a positive integer for the `upperLimit`.';
       expect(badInput).to.throw(errMsg).with.property('name', 'InputException');
     });
 
-    it('Returns an error message for a non-numeric `upperLimit`', () => {
+    it('Returns an error message for a non-numeric input', () => {
       const badInput = () => sumOfFibonacciEvens('90');
       const errMsg = 'Please enter a positive integer for the `upperLimit`.';
       expect(badInput).to.throw(errMsg).with.property('name', 'InputException');
