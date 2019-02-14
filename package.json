@@ -1,0 +1,19 @@
+{
+  "name": "yooler-js",
+  "description": "My solutions to the popular series of programming problems, coded in JavaScript.",
+  "author": "Clinton Owen",
+  "version": "1.0.0",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha ./*/*.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/clintonowen/yooler-js.git"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0"
+  }
+}
