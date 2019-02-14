@@ -15,7 +15,7 @@ function isPrime (x) {
     return false;
   }
   let prime = true;
-  for (let i = 2; i < Math.floor(Math.sqrt(x)); i++) {
+  for (let i = 2; i <= Math.floor(Math.sqrt(x)); i++) {
     if (x % i === 0) {
       prime = false;
     }
