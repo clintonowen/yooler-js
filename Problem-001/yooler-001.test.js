@@ -1,7 +1,6 @@
 /* global describe it */
 'use strict';
 
-// import sumOfMultiples from './yooler-001.js';
 const chai = require('chai');
 const sumOfMultiples = require('./yooler-001.js');
 const expect = chai.expect;
