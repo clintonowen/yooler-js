@@ -50,7 +50,7 @@ function InputException (message) {
 }
 
 function isPrime (n) {
-  // console.log(`Checking if ${x} is prime.`);
+  // console.log(`Checking if ${n} is prime.`);
   if (n < 2) {
     return false;
   }
