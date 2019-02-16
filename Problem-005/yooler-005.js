@@ -55,9 +55,10 @@ function isPrime (n) {
     return false;
   }
   let prime = true;
-  for (let i = 2; i <= Math.floor(Math.sqrt(n)); i++) {
+  for (let i = 2; i <= Math.sqrt(n); i++) {
     if (n % i === 0) {
       prime = false;
+      break;
     }
   }
   return prime;

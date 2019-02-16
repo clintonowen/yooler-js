@@ -25,12 +25,12 @@
 
 /**
  * ========== PSEUDOCODE ==========
- * LCM (low, mid = low + 1, high)
- *  If low = `high` (base case):
- *    End the recursion somehow
- *  Find the factors of `low` and `low + 1`
+ * LCM (low, mid, high)
+ *  If mid === `high` (base case):
+ *    Return `low`
+ *  Find the factors of `low` and `mid`
  *  Find the greatest common factor (GCF)
- *  Return LCM((`low` * `low` + 1) / `GCF`), `low` + 2, `high`)
+ *  Return LCM((`low` * `mid`) / `GCF`), `mid` + 1, `high`)
  */
 
 function InputException (message) {
@@ -54,14 +54,14 @@ function getLCM (low, mid, high) {
   }
   const lowFactors = getFactors(low);
   const midFactors = getFactors(mid);
-  let GCM;
+  let GCF;
   for (let i = lowFactors.length - 1; i >= 0; i--) {
     if (midFactors.includes(lowFactors[i])) {
-      GCM = lowFactors[i];
+      GCF = lowFactors[i];
       break;
     }
   }
-  return getLCM((low * mid) / GCM, mid + 1, high);
+  return getLCM((low * mid) / GCF, mid + 1, high);
 }
 
 function getSmallestMultiple (low, high) {

@@ -1,9 +1,12 @@
 'use strict';
 
-/* ========== PROBLEM 1: Multiples of 3 and 5 ========== */
-// If we list all the natural numbers below 10 that are multiples of 3 or 5,
-// we get 3, 5, 6 and 9. The sum of these multiples is 23.
-// Find the sum of all the multiples of 3 or 5 below 1000.
+/**
+ * ========== PROBLEM 1: Multiples of 3 and 5 ==========
+ * If we list all the natural numbers below 10 that are multiples of 3 or 5, we
+ * get 3, 5, 6 and 9. The sum of these multiples is 23.
+ *
+ * Find the sum of all the multiples of 3 or 5 below 1000.
+ */
 
 function InputException (message) {
   this.message = message;
@@ -19,9 +22,8 @@ function sumOfMultiples (upperLimit, multiples) {
     throw new InputException('Please enter an array of positive integers for `multiples`.');
   }
 
-  // For every integer below the `upperLimit`,
-  // check if it is a multiple of any of the `multiples`
-  // If so, add it to the `sum`
+  // For every integer below the `upperLimit`, check if it is a multiple of any
+  // of the `multiples`. If so, add it to the `sum`
   let sum = 0;
   for (let i = 0; i < upperLimit; i++) {
     for (let multiple of multiples) {

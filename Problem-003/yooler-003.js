@@ -1,23 +1,27 @@
 'use strict';
 
-/* ========== PROBLEM 3: Largest prime factor ========== */
-// The prime factors of 13195 are 5, 7, 13 and 29.
-// What is the largest prime factor of the number 600851475143 ?
+/**
+ * ========== PROBLEM 3: Largest prime factor ==========
+ * The prime factors of 13195 are 5, 7, 13 and 29.
+ *
+ * What is the largest prime factor of the number 600851475143 ?
+ */
 
 function InputException (message) {
   this.message = message;
   this.name = 'InputException';
 }
 
-function isPrime (x) {
-  // console.log(`Checking if ${x} is prime.`);
-  if (x < 2) {
+function isPrime (n) {
+  // console.log(`Checking if ${n} is prime.`);
+  if (n < 2) {
     return false;
   }
   let prime = true;
-  for (let i = 2; i <= Math.floor(Math.sqrt(x)); i++) {
-    if (x % i === 0) {
+  for (let i = 2; i <= Math.sqrt(n); i++) {
+    if (n % i === 0) {
       prime = false;
+      break;
     }
   }
   return prime;
