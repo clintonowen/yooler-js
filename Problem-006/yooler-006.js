@@ -65,7 +65,7 @@ function getSumSquareDiff (upperLimit) {
 // console.log(getSumSquareDiff());
 // console.log(getSumSquareDiff(-10));
 // console.log(getSumSquareDiff(10.33));
-// console.log(getSumSquareDiff(10'));
+// console.log(getSumSquareDiff('10'));
 
 /* ========== VALID INPUTS ========== */
 // console.log(getSumSquareDiff(3));
