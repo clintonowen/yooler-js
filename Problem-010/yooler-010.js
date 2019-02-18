@@ -18,19 +18,17 @@ function InputException (message) {
   this.name = 'InputException';
 }
 
-function isPrime (n) {
+function isPrime (n, primes) {
   // console.log(`Checking if ${n} is prime.`);
   if (n < 2) {
     return false;
   }
-  let prime = true;
-  for (let i = 2; i <= Math.sqrt(n); i++) {
-    if (n % i === 0) {
-      prime = false;
-      break;
+  for (let i = 0; primes[i] <= Math.sqrt(n); i++) {
+    if (n % primes[i] === 0) {
+      return false;
     }
   }
-  return prime;
+  return true;
 }
 
 function sumPrimes (n) {
@@ -45,10 +43,12 @@ function sumPrimes (n) {
     return 'The sum of all primes below 2 is 2.';
   }
 
+  const primes = [2];
   let sum = 2;
 
   for (let i = 3; i < n; i += 2) {
-    if (isPrime(i)) {
+    if (isPrime(i, primes)) {
+      primes.push(i);
       sum += i;
     }
   }
