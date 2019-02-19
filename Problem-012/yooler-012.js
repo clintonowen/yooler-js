@@ -25,11 +25,36 @@
 
 /**
  * ========== MY THOUGHTS ==========
+ * The most basic solution I can think of is to iterate through the triangular
+ * numbers, checking the number of divisors until the desired number is found.
+ *
+ * To iterate through the triangular numbers, we'll start by declaring a
+ * `triangleNum` variable equal to 0. Then we can use a simple loop with `i=1`,
+ * adding `i` to `triangleNum`, checking the number of divisors, and then
+ * incrementing `i` by 1. The loop should end when the number of divisors
+ * reaches the target number.
+ *
+ * To check divisors for a number, `n`, iterate from `i=1` to `i=sqrt(n)`,
+ * checking if `n` is evenly divisible by `i`. If so, add `i` to a `divisors`
+ * array. If `i !== sqrt(n)`, also add its opposite (`n / i`).
  */
 
 function InputException (message) {
   this.message = message;
   this.name = 'InputException';
+}
+
+function getDivisors (n) {
+  const divisors = [];
+  for (let i = 1; i <= Math.sqrt(n); i++) {
+    if (n % i === 0) {
+      divisors.push(i);
+      if (i !== Math.sqrt(n)) {
+        divisors.push(n / i);
+      }
+    }
+  }
+  return divisors.sort();
 }
 
 function findTriangle (n) {
@@ -38,16 +63,22 @@ function findTriangle (n) {
     throw new InputException('Please enter a positive integer for `n`.');
   }
 
-  let triangle;
+  let divisors = [];
+  let triangleNum = 0;
 
-  return `The first triangle number to have over ${n} divisors is ${triangle}.`;
+  for (let i = 1; divisors.length < n; i++) {
+    triangleNum += i;
+    divisors = getDivisors(triangleNum);
+  }
+
+  return `The first triangle number to have over ${n} divisors is ${triangleNum}.`;
 }
 
 /* ========== INVALID INPUTS ========== */
 // console.log(findTriangle());
 // console.log(findTriangle(-5));
 // console.log(findTriangle(5.33));
-// console.log(findTriangle('15'));
+// console.log(findTriangle('5'));
 
 /* ========== VALID INPUTS ========== */
 // console.log(findTriangle(1));
@@ -55,9 +86,9 @@ function findTriangle (n) {
 // console.log(findTriangle(100));
 
 /* ========== TEST CASE ========== */
-console.log(findTriangle(5)); // => 28
+// console.log(findTriangle(5)); // => 28
 
 /* ========== SOLUTION ========== */
-// console.log(findTriangle(500)); // => ?
+console.log(findTriangle(500)); // => 76576500
 
 module.exports = findTriangle;
