@@ -36,19 +36,15 @@
  * ========== MY THOUGHTS ==========
  * If we put the entire grid of numbers into a single `array`, we can:
  *  - Find the product of 4 horizontally-adjacent numbers by starting at index
- *    `i` and finding the result of `i x i+1 x i+2 x i+3` while `i+3` is less
- *    than `array.length - 1` and if `i+3 % 20 === 0`, `i += 4`
+ *    `i` and finding the result of `i x i+1 x i+2 x i+3`
  *  - Find the product of 4 vertically-adjacent numbers by starting at index `i`
- *    and finding the result of `i x i+20 x i+40 x i+60` while `i+60` is less
- *    than `array.length - 1`
+ *    and finding the result of `i x i+20 x i+40 x i+60`
  *  - Find the product of 4 diagonally-right-adjacent numbers by starting at
- *    index `i` and finding the result of `i x i+21 x i+42 x i+63` while `i+63`
- *    is less than `array.length - 1` and if `i+63 % 20 === 0`, `i += 4`
+ *    index `i` and finding the result of `i x i+21 x i+42 x i+63`
  *  - Find the product of 4 diagonally-left-adjacent numbers by starting at
- *    index `i` and finding the result of `i x i+19 x i+38 x i+57` while `i+57`
- *    is less than `array.length - 1` and if `i % 20 === 0`, `i += 4`
- * Then, we just need to iterate through the array and keep a running `max` to
- * return at the end.
+ *    index `i` and finding the result of `i x i+19 x i+38 x i+57`
+ * Then, we just need to iterate through the array and keep a running
+ * `maxProduct` to return at the end.
  */
 
 function getProduct (start, mod, grid) {
