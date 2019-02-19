@@ -110,6 +110,7 @@
 /**
  * ========== MY THOUGHTS ==========
  */
+
 function InputException (message) {
   this.message = message;
   this.name = 'InputException';
