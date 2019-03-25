@@ -19,7 +19,7 @@
  *
  * Initially, this seems like a job for recursion.
  *
- * Recursion worked find for small lattices, but ran out of memory for a 20x20.
+ * Recursion worked fine for small lattices, but ran out of memory for a 20x20.
  * There must be a simpler, mathematical way to achieve the answer.
  *
  * After reading about advanced permutations, I found that if a set of N items
@@ -55,34 +55,41 @@ function findLatticePaths (n) {
     throw new InputException('Please enter a positive integer greater than 0 for `n`.');
   }
 
-  // let paths = [];
-  // let rRegEx = /R/g;
-  // let lRegEx = /L/g;
-
-  // function returnPaths (n, path = '') {
-  //   if (path.length === n * 2) {
-  //     // console.log(`Adding ${path} to paths.`);
-  //     paths.push(path);
-  //     return;
-  //   }
-  //   let rCount = path.match(rRegEx);
-  //   let lCount = path.match(lRegEx);
-  //   if (rCount === null || rCount.length < n) {
-  //     returnPaths(n, path + 'R');
-  //   }
-  //   if (lCount === null || lCount.length < n) {
-  //     returnPaths(n, path + 'L');
-  //   }
-  // }
-
-  // returnPaths(n);
-
-  // return `For a ${n}x${n} grid, there are ${paths.length} paths from the top-left to the bottom-right corner (only moving right and down).`;
-
   let paths = Math.round(getFactorial(n * 2) / (getFactorial(n) ** 2));
 
   return `For a ${n}x${n} grid, there are ${paths} paths from the top-left to the bottom-right corner (only moving right and down).`;
 }
+
+// function findLatticePathsInefficiently (n) {
+//   // Validate the input
+//   if (!n || n < 1 || !Number.isInteger(n)) {
+//     throw new InputException('Please enter a positive integer greater than 0 for `n`.');
+//   }
+
+//   let paths = [];
+//   let rRegEx = /R/g;
+//   let lRegEx = /L/g;
+
+//   function returnPaths (n, path = '') {
+//     if (path.length === n * 2) {
+//       // console.log(`Adding ${path} to paths.`);
+//       paths.push(path);
+//       return;
+//     }
+//     let rCount = path.match(rRegEx);
+//     let lCount = path.match(lRegEx);
+//     if (rCount === null || rCount.length < n) {
+//       returnPaths(n, path + 'R');
+//     }
+//     if (lCount === null || lCount.length < n) {
+//       returnPaths(n, path + 'L');
+//     }
+//   }
+
+//   returnPaths(n);
+
+//   return `For a ${n}x${n} grid, there are ${paths.length} paths from the top-left to the bottom-right corner (only moving right and down).`;
+// }
 
 /* ========== INVALID INPUTS ========== */
 // console.log(findLatticePaths());
