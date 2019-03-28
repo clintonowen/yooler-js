@@ -17,37 +17,39 @@
 /**
  * ========== MY THOUGHTS ==========
  * The first 20 numbers are unique:
- * 1: 3
- * 2: 3
- * 3: 5
- * 4: 4
- * 5: 4
- * 6: 3
- * 7: 5
- * 8: 5
- * 9: 4
- * 10: 3
- * 11: 6
- * 12: 6
- * 13: 8
- * 14: 8
- * 15: 7
- * 16: 7
- * 17: 9
- * 18: 8
- * 19: 8
- * 20: 6
+ * 1: one        (3)
+ * 2: two        (3)
+ * 3: three      (5)
+ * 4: four       (4)
+ * 5: five       (4)
+ * 6: six        (3)
+ * 7: seven      (5)
+ * 8: eight      (5)
+ * 9: nine       (4)
+ * 10: ten       (3)
+ * 11: eleven    (6)
+ * 12: twelve    (6)
+ * 13: thirteen  (8)
+ * 14: fourteen  (8)
+ * 15: fifteen   (7)
+ * 16: sixteen   (7)
+ * 17: seventeen (9)
+ * 18: eighteen  (8)
+ * 19: nineteen  (8)
+ * 20: twenty    (6)
  * As well as the multiples of 10 from 30 to 90:
- * 30: 6
- * 40: 5
- * 50: 5
- * 60: 5
- * 70: 7
- * 80: 6
- * 90: 6
- * The hundreds are combinations of previous numbers plus "hundred" (7) and,
- * for non-multiples of 100, the word "and" (3).
- * The thousands are combinations of previous numbers plus "thousand" (8).
+ * 30: thirty    (6)
+ * 40: forty     (5)
+ * 50: fifty     (5)
+ * 60: sixty     (5)
+ * 70: seventy   (7)
+ * 80: eighty    (6)
+ * 90: ninety    (6)
+ *
+ * The 100's are combinations of previous numbers plus "hundred" (7).
+ * The 1000's are combinations of previous numbers plus "thousand" (8).
+ * All 100's and 1000's with a non-zero tens digit include a single instance of
+ * the word "and" (3).
  */
 
 function InputException (message) {
