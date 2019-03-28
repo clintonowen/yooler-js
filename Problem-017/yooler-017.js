@@ -55,13 +55,122 @@ function InputException (message) {
   this.name = 'InputException';
 }
 
+function getOnes (n) {
+  switch (n) {
+    case 1: // "one"
+    case 2: // "two"
+    case 6: // "six"
+    {
+      return 3;
+    }
+    case 4: // "four"
+    case 5: // "five"
+    case 9: // "nine"
+    {
+      return 4;
+    }
+    case 3: // "three"
+    case 7: // "seven"
+    case 8: // "eight"
+    {
+      return 5;
+    }
+    default:
+      throw new InputException('Please enter an integer from 1 to 9.');
+  }
+}
+
+function getTeens (n) {
+  switch (n) {
+    case 11: // "eleven"
+    case 12: // "twelve"
+    {
+      return 6;
+    }
+    case 15: // "fifteen"
+    case 16: // "sixteen"
+    {
+      return 7;
+    }
+    case 13: // "thirteen"
+    case 14: // "fourteen"
+    case 18: // "eighteen"
+    case 19: // "nineteen"
+    {
+      return 8;
+    }
+    case 17: // "seventeen"
+      return 9;
+    default:
+      throw new InputException('Please enter an integer from 11 to 19.');
+  }
+}
+
+function getTens (n) {
+  switch (n) {
+    case 10: // "ten"
+      return 3;
+    case 40: // "forty"
+    case 50: // "fifty"
+    case 60: // "sixty"
+    {
+      return 5;
+    }
+    case 20: // "twenty"
+    case 30: // "thirty"
+    case 80: // "eighty"
+    case 90: // "ninety"
+    {
+      return 6;
+    }
+    case 70: // "seventy"
+      return 7;
+    default:
+      throw new InputException('Please enter a multiple of 10 from 10 to 90.');
+  }
+}
+
 function countNumLetters (n) {
   // Validate the input
   if (!n || n < 1 || !Number.isInteger(n)) {
-    throw new InputException('Please enter a positive integer greater than 0 for `n`.');
+    throw new InputException('Please enter a positive integer greater than 0.');
   }
 
   let letters = 0;
+  for (let i = 1; i <= n; i++) {
+    let num = i;
+    let add = 0;
+    if (num >= 1000) {
+      let firstDigit = Number(num.toString()[0]);
+      add += getOnes(firstDigit);
+      add += 8; // "thousand"
+      num -= firstDigit * 1000;
+    }
+    if (num >= 100) {
+      let firstDigit = Number(num.toString()[0]);
+      add += getOnes(firstDigit);
+      add += 7; // "hundred"
+      num -= firstDigit * 100;
+    }
+    if (num > 0 && num < i) {
+      add += 3; // "and"
+    }
+    if (num >= 10) {
+      if (num > 10 && num < 20) {
+        add += getTeens(num);
+        num -= num;
+      } else {
+        let tens = Number(num.toString()[0]) * 10;
+        add += getTens(tens);
+        num -= tens;
+      }
+    }
+    if (num > 0) {
+      add += getOnes(num);
+    }
+    // console.log(`${i}: ${add}`);
+    letters += add;
+  }
 
   return `If all the numbers from 1 to ${n} inclusive were written out in words, ${letters} letters would be used.`;
 }
@@ -74,9 +183,9 @@ function countNumLetters (n) {
 // console.log(countNumLetters(0));
 
 /* ========== VALID INPUTS ========== */
-console.log(countNumLetters(5)); // => 19
+// console.log(countNumLetters(5)); // => 19
 
 /* ========== SOLUTION ========== */
-// console.log(countNumLetters(1000)); // => 1366
+console.log(countNumLetters(1000)); // => 21124
 
 module.exports = countNumLetters;

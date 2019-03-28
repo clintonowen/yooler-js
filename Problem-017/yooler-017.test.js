@@ -16,31 +16,31 @@ describe('Problem 17', () => {
   describe('With an invalid input:', () => {
     it('Returns an error message for no input', () => {
       const badInput = () => countNumLetters();
-      const errMsg = 'Please enter a positive integer greater than 0 for `n`.';
+      const errMsg = 'Please enter a positive integer greater than 0.';
       expect(badInput).to.throw(errMsg).with.property('name', 'InputException');
     });
 
     it('Returns an error message for a negative input', () => {
       const badInput = () => countNumLetters(-1000);
-      const errMsg = 'Please enter a positive integer greater than 0 for `n`.';
+      const errMsg = 'Please enter a positive integer greater than 0.';
       expect(badInput).to.throw(errMsg).with.property('name', 'InputException');
     });
 
     it('Returns an error message for a non-integer input', () => {
       const badInput = () => countNumLetters(1000.33);
-      const errMsg = 'Please enter a positive integer greater than 0 for `n`.';
+      const errMsg = 'Please enter a positive integer greater than 0.';
       expect(badInput).to.throw(errMsg).with.property('name', 'InputException');
     });
 
     it('Returns an error message for a non-numeric input', () => {
       const badInput = () => countNumLetters('1000');
-      const errMsg = 'Please enter a positive integer greater than 0 for `n`.';
+      const errMsg = 'Please enter a positive integer greater than 0.';
       expect(badInput).to.throw(errMsg).with.property('name', 'InputException');
     });
 
     it('Returns an error message for an input of 0', () => {
       const badInput = () => countNumLetters(0);
-      const errMsg = 'Please enter a positive integer greater than 0 for `n`.';
+      const errMsg = 'Please enter a positive integer greater than 0.';
       expect(badInput).to.throw(errMsg).with.property('name', 'InputException');
     });
   });
