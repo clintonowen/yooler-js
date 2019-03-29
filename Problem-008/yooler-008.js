@@ -88,7 +88,9 @@ function getLargestProduct (n) {
 // console.log(getLargestProduct(3));
 
 /* ========== TEST CASE ========== */
+console.time();
 console.log(getLargestProduct(4)); // => 5832
+console.timeEnd();
 
 /* ========== SOLUTION ========== */
 // console.log(getLargestProduct(13)); // => 23514624000

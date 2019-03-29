@@ -89,6 +89,8 @@ function findTriangle (n) {
 // console.log(findTriangle(5)); // => 28
 
 /* ========== SOLUTION ========== */
+console.time();
 console.log(findTriangle(500)); // => 76576500
+console.timeEnd();
 
 module.exports = findTriangle;

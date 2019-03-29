@@ -72,6 +72,8 @@ function sumOfMultiples (upperLimit, multiples) {
 // console.log(sumOfMultiples(10, [3, 5])); // => 23
 
 /* ========== SOLUTION ========== */
+console.time();
 console.log(sumOfMultiples(1000, [3, 5]));
+console.timeEnd();
 
 module.exports = sumOfMultiples;

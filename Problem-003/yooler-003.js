@@ -61,6 +61,8 @@ function getLargestPrimeFactor (n) {
 // console.log(getLargestPrimeFactor(13195)); // => 29
 
 /* ========== SOLUTION ========== */
+console.time();
 console.log(getLargestPrimeFactor(600851475143)); // => 6857
+console.timeEnd();
 
 module.exports = getLargestPrimeFactor;

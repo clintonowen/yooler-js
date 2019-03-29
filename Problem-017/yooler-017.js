@@ -188,6 +188,8 @@ function countNumLetters (n) {
 // console.log(countNumLetters(5)); // => 19
 
 /* ========== SOLUTION ========== */
+console.time();
 console.log(countNumLetters(1000)); // => 21124
+console.timeEnd();
 
 module.exports = countNumLetters;

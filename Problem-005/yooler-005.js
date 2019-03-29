@@ -113,6 +113,8 @@ function getSmallestMultiple (low, high) {
 // console.log(getSmallestMultiple(1, 10)); // => 2520
 
 /* ========== SOLUTION ========== */
+// console.time();
 // console.log(getSmallestMultiple(1, 20)); // => 232792560
+// console.timeEnd();
 
 module.exports = getSmallestMultiple;

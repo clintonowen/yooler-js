@@ -93,6 +93,8 @@ function getLargestGridProduct () {
 }
 
 /* ========== SOLUTION ========== */
+console.time();
 console.log(getLargestGridProduct()); // => 70600674
+console.timeEnd();
 
 module.exports = getLargestGridProduct;

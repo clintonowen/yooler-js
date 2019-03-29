@@ -148,6 +148,8 @@ function getLargestPalindrome (digits) {
 // console.log(getLargestPalindrome(2)); // => 9009 (99 * 91)
 
 /* ========== SOLUTION ========== */
+console.time();
 console.log(getLargestPalindrome(3)); // => 906609 (993 * 913)
+console.timeEnd();
 
 module.exports = getLargestPalindrome;

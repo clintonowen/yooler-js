@@ -162,6 +162,8 @@ function getFirstNDigitsOfSum (n) {
 // console.log(getFirstNDigitsOfSum(15));
 
 /* ========== SOLUTION ========== */
+console.time();
 console.log(getFirstNDigitsOfSum(10)); // => 5537376230
+console.timeEnd();
 
 module.exports = getFirstNDigitsOfSum;

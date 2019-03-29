@@ -56,6 +56,8 @@ function sumOfFibonacciEvens (upperLimit) {
 // console.log(sumOfFibonacciEvens(90)); // => 44
 
 /* ========== SOLUTION ========== */
+console.time();
 console.log(sumOfFibonacciEvens(4000000)); // => 4613732
+console.timeEnd();
 
 module.exports = sumOfFibonacciEvens;

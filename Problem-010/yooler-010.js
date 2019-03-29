@@ -72,6 +72,8 @@ function sumPrimes (n) {
 // console.log(sumPrimes(10)); // => 17
 
 /* ========== SOLUTION ========== */
+console.time();
 console.log(sumPrimes(2000000)); // => 142913828922
+console.timeEnd();
 
 module.exports = sumPrimes;

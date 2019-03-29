@@ -65,6 +65,8 @@ function findLongestCollatz (max) {
 // console.log(findLongestCollatz(1000));
 
 /* ========== SOLUTION ========== */
+console.time();
 console.log(findLongestCollatz(1000000)); // => 837799
+console.timeEnd();
 
 module.exports = findLongestCollatz;

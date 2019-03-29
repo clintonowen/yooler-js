@@ -77,6 +77,8 @@ function findPyTri (n) {
 // console.log(findPyTri(12)); // => 3, 4, 5 (60)
 
 /* ========== SOLUTION ========== */
+console.time();
 console.log(findPyTri(1000)); // => 200, 375, 425 (31875000)
+console.timeEnd();
 
 module.exports = findPyTri;

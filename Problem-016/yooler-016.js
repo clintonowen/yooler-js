@@ -156,6 +156,8 @@ function sumPowerDigits (n) {
 // console.log(sumPowerDigits(15)); // => 26
 
 /* ========== SOLUTION ========== */
+console.time();
 console.log(sumPowerDigits(1000)); // => 1366
+console.timeEnd();
 
 module.exports = sumPowerDigits;

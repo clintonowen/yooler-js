@@ -74,6 +74,8 @@ function getSumSquareDiff (upperLimit) {
 // console.log(getSumSquareDiff(10)); // => 2640
 
 /* ========== SOLUTION ========== */
+console.time();
 console.log(getSumSquareDiff(100)); // => 25164150
+console.timeEnd();
 
 module.exports = getSumSquareDiff;

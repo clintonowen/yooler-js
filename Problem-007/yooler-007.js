@@ -87,6 +87,8 @@ function getNthPrime (n) {
 // console.log(getNthPrime(6)); // => 13
 
 /* ========== SOLUTION ========== */
+console.time();
 console.log(getNthPrime(10001)); // => 104743
+console.timeEnd();
 
 module.exports = getNthPrime;

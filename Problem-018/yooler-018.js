@@ -49,22 +49,22 @@ function InputException (message) {
 function isValidTriangle (triangle) {
   let valid = true;
   if (!Array.isArray(triangle)) {
-    console.log('Main element not an array.');
+    // console.log('Main element not an array.');
     return false;
   }
   for (let i = 0; i < triangle.length; i++) {
     if (!Array.isArray(triangle[i])) {
-      console.log(`Sub-element ${i} not an array.`);
+      // console.log(`Sub-element ${i} not an array.`);
       return false;
     }
     if (i < triangle.length - 1 &&
       triangle[i].length !== triangle[i + 1].length - 1) {
-      console.log(`Sub-element ${i} not in triangular order.`);
+      // console.log(`Sub-element ${i} not in triangular order.`);
       return false;
     }
     triangle[i].forEach(num => {
       if (num < 0 || !Number.isInteger(num)) {
-        console.log('Negative or non-integer number.');
+        // console.log('Negative or non-integer number.');
         valid = false;
       }
     });
@@ -126,6 +126,8 @@ const triangle = [
   [63, 66, 4, 68, 89, 53, 67, 30, 73, 16, 69, 87, 40, 31],
   [4, 62, 98, 27, 23, 9, 70, 98, 73, 93, 38, 53, 60, 4, 23]
 ];
+console.time();
 console.log(findMaxPath(triangle)); // => 1074
+console.timeEnd();
 
 module.exports = findMaxPath;

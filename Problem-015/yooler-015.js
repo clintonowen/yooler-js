@@ -103,6 +103,8 @@ function findLatticePaths (n) {
 // console.log(findLatticePaths(2)); // => 6
 
 /* ========== SOLUTION ========== */
+console.time();
 console.log(findLatticePaths(20)); // => 137846528820
+console.timeEnd();
 
 module.exports = findLatticePaths;
