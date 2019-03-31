@@ -1,3 +1,4 @@
+/* global BigInt */
 'use strict';
 
 /**
@@ -57,6 +58,11 @@
  * the number. Starting with [1], I multiplied it by 2 1000 times, using basic
  * arithmetic to compute the full, 302-digit number.
  * Then, I used a simple loop to add up the digits.
+ *
+ * Attempt #4:
+ * After solving Problem 20 in a very similar way, I decided to look into using
+ * JavaScript's new BigInt data type. This allows the problem to be solved in a
+ * "single line" of code.
  */
 
 function InputException (message) {
@@ -70,29 +76,38 @@ function sumPowerDigits (n) {
     throw new InputException('Please enter a positive integer greater than 0 for `n`.');
   }
 
-  // Attempt #3
-  let sum = 0;
-  let num = [1];
-  for (let i = 0; i < n; i++) {
-    let length = num.length + 1;
-    let carry = 0;
-    for (let j = 0; j < length; j++) {
-      let digit = num[j] || 0;
-      digit = 2 * digit + carry;
-      if (digit > 9) {
-        digit -= 10;
-        carry = 1;
-      } else {
-        carry = 0;
-      }
-      if (j < length - 1 || (j === length - 1 && digit !== 0)) {
-        num[j] = digit;
-      }
-    }
-  }
-  for (let i = 0; i < num.length; i++) {
-    sum += num[i];
-  }
+  // Attempt #4
+  const sum = [...Array(n)]
+    .map(_ => BigInt(2))
+    .reduce((a, c) => a * c)
+    .toString()
+    .split('')
+    .map(Number)
+    .reduce((a, c) => a + c);
+
+  // // Attempt #3
+  // let sum = 0;
+  // let num = [1];
+  // for (let i = 0; i < n; i++) {
+  //   let length = num.length + 1;
+  //   let carry = 0;
+  //   for (let j = 0; j < length; j++) {
+  //     let digit = num[j] || 0;
+  //     digit = 2 * digit + carry;
+  //     if (digit > 9) {
+  //       digit -= 10;
+  //       carry = 1;
+  //     } else {
+  //       carry = 0;
+  //     }
+  //     if (j < length - 1 || (j === length - 1 && digit !== 0)) {
+  //       num[j] = digit;
+  //     }
+  //   }
+  // }
+  // for (let i = 0; i < num.length; i++) {
+  //   sum += num[i];
+  // }
 
   // // Attempt #2
   // let sum = 0;
